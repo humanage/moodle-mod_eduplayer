@@ -30,7 +30,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $module->version   	= 2013090500;
-$module->requires  	= 2013040500;
+$module->requires  	= 2012062500;
 $module->cron      	= 0;
 $module->maturity = MATURITY_STABLE;
 $module->release = '1.1';
