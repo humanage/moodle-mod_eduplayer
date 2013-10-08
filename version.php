@@ -29,9 +29,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$module->version   	= 2013090500;
+$module->version   	= 2013100800;
 $module->requires  	= 2012062500;
 $module->cron      	= 0;
 $module->maturity = MATURITY_STABLE;
-$module->release = '1.1';
+$module->release = '1.2';
 $module->component 	= 'mod_eduplayer';
