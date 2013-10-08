@@ -88,8 +88,10 @@ function eduplayer_add_instance(stdClass $eduplayer, mod_eduplayer_mod_form $mfo
         file_save_draft_area_files($draftitemid, $context->id, 'mod_eduplayer', $value, 0, array('subdirs'=>0));
         $file = $fs->get_area_files($context->id, 'mod_eduplayer', $value, 0, 'sortorder DESC, id ASC', false); // TODO: this is not very efficient!!
         $file_details = $fs->get_file_by_hash(key($file));
-        if( empty( $file ) )
+        if( empty( $file ) ){
+			$eduplayer->$value = NULL;			
 			continue;
+		}
         if ($value == 'file') {
             $eduplayer->eduplayerfile = $file_details->get_filename();
         } else {
@@ -143,8 +145,10 @@ function eduplayer_update_instance(stdClass $eduplayer, mod_eduplayer_mod_form $
         file_prepare_draft_area($draftitemid, $context->id, 'mod_eduplayer', $value, 0, array('subdirs'=>0));
         file_save_draft_area_files($draftitemid, $context->id, 'mod_eduplayer', $value, 0, array('subdirs'=>0));
         $file = $fs->get_area_files($context->id, 'mod_eduplayer', $value, 0, 'sortorder DESC, id ASC', false); // TODO: this is not very efficient!!
-        if( empty( $file ) )
+        if( empty( $file ) ){
+			$eduplayer->$value = NULL;			
 			continue;
+		}
 		$file_details = $fs->get_file_by_hash(key($file));
         
         if ($value == 'file') {
@@ -618,12 +622,12 @@ function eduplayer_audio_extensions() {
 function normalize_height( $eduplayer ){
 
 	if( $eduplayer->type === 'audio' && ( is_null( $eduplayer->image ) || $eduplayer->image=='') ){
-		$eduplayer->height = '25';
-	}else if( $eduplayer->type === 'audio' && $eduplayer->image!='' && $eduplayer->height >= '25' ){
-		$eduplayer->height = '480';
+		$eduplayer->height = '35';
+	}else if( $eduplayer->type === 'audio' && $eduplayer->image!='' && $eduplayer->height < '360' ){
+		$eduplayer->height = '360';
 	}
 	
-	return $eduplayer->height;		
+	return $eduplayer->height;	
 }
 
 /*
