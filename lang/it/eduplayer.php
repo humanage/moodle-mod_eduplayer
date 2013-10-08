@@ -81,7 +81,7 @@ $string['captionsfile_help'] = 'File Sottotitoli: solo file con estensione .vtt,
 $string['captionsfontsize'] = 'Grandezza dei font';
 $string['captionsstate'] = 'Mostra Sottotitoli';
 //sharing
-$string['share'] = 'Condividi';
+$string['share'] = 'Invia';
 $string['cancel'] = 'Annulla';
 $string['sharing'] = 'Condivisione';
 $string['sharelink'] = 'Url da condividere';
