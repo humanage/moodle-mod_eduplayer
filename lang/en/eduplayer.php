@@ -39,22 +39,22 @@ $string['pluginadministration'] = 'Eduplayer administration';
 $string['pluginname'] = 'eduplayer';
 //General
 $string['eduplayersource'] = 'Source';
-$string['eduplayersource_help'] = 'It is possible to upload video files .mp4, .flv, .webm and mp3, m4a audio file or insert an url to a media file of those extensions';
+$string['eduplayersource_help'] = 'It is possible to upload video files .mp4, .flv, .webm and .mp3, .m4a audio file or insert an url to a media file of those extensions';
 $string['urltype'] = 'Type';
 $string['linkurl'] = 'Link';
 $string['eduplayerfile'] = 'File';
-$string['eduplayerfile_help'] = 'It is possible to upload .mp4, .flv, .webm video files or mp3, .m4a audio files';
+$string['eduplayerfile_help'] = 'It is possible to upload .mp4, .flv, .webm video files or .mp3, .m4a audio files';
 $string['type'] = 'Playback type';
 //Playlists
 $string['playlists'] = 'Playlist';
 $string['eduplayerplaylist'] = 'Playlist';
-$string['eduplayerplaylist_help'] = 'Choose where to show the playlist and size in pixels';
+$string['eduplayerplaylist_help'] = 'Choose where to show the playlist and its size in pixels';
 $string['playlist'] = 'Position';
 $string['playlistsize'] = 'Size (pixels)';
 //Behaviour
 $string['behaviour'] = 'Behaviour';
 $string['eduplayerbehaviour'] = 'Behaviour';
-$string['eduplayerbehaviour_help'] = 'Choose how the video is rendered and playback options ( es mute defualt, auto start playback etc )';
+$string['eduplayerbehaviour_help'] = 'Choose how the video is rendered and playback options (by default mute, auto start playback etc.)';
 $string['autostart'] = 'Auto Start';
 $string['stretching'] = 'Stretch the content to the player';
 $string['mute'] = 'Mute';
@@ -63,12 +63,12 @@ $string['eduplayerrepeat'] = 'Repeat';
 //Appearance
 $string['appearance'] = 'Appearance';
 $string['eduplayerappearance'] = 'Appearance';
-$string['eduplayerappearance_help'] = 'Define size and appereance options of the player such as width, height, player skin and poster image';
+$string['eduplayerappearance_help'] = 'Define size and appearance options of the player such as width, height, player skin and poster image';
 $string['title'] = 'Title';
 $string['width'] = 'Width';
 $string['height'] = 'Height';
 $string['image'] = 'Poster Image';
-$string['image_help'] = 'Poster Image: only file .jpg, .jpeg, .png only';
+$string['image_help'] = 'Poster Image: only .jpg, .jpeg, .png files';
 $string['notes'] = 'Notes';
 $string['eduplayerskin'] = 'Skin of the player';
 //captions 
@@ -77,7 +77,7 @@ $string['eduplayercaptions'] = 'Captions';
 $string['eduplayercaptions_help'] = 'Enable captions support';
 $string['captionsback'] = 'Transparent Background';
 $string['captionsfile'] = 'Captions File';
-$string['captionsfile_help'] = 'Captions File: only .vtt, .srt, .xml only';
+$string['captionsfile_help'] = 'Captions File: only .vtt, .srt, .xml files';
 $string['captionsfontsize'] = 'Font Size';
 $string['captionsstate'] = 'Show Captions';
 //sharing
@@ -85,13 +85,13 @@ $string['share'] = 'Share';
 $string['cancel'] = 'Cancel';
 $string['sharing'] = 'Sharing';
 $string['sharelink'] = 'Link to share';
-$string['sharelink_help'] = 'Important: the e-mail sharing fetaures is enabled by filling this field. If the field is empty the link will not be mailed';
+$string['sharelink_help'] = 'Important: the e-mail sharing feature is enabled by filling this field. If the field is empty, the link will not be mailed';
 $string['sharemessagelabel'] = 'E-mail share message';
 $string['sharemailmessage_editor'] = 'E-mail share message';
-$string['sharemailmessage_editor_help'] = 'This text wil be send as the e-mail message body with the link in the share url field. Modify this text as you like';
+$string['sharemailmessage_editor_help'] = 'This text wil be sent as the e-mail message body with the link in the share url field. Modify this text as you like';
 $string['validemail'] = 'Give a valid e-mail address';
-$string['sharetext'] = 'Send via e-mail a link to an online copy of this resource';
-$string['sharesubbject'] = '{$a->firstname} {$a->lastname} is sharing with you this multimedia resource';
+$string['sharetext'] = 'Send a link to an online copy of this resource via e-mail';
+$string['sharesubbject'] = '{$a->firstname} {$a->lastname} is sharing this multimedia resource with you';
 $string['sharemessage'] = '<p>Check this interesting course:<br /></p>';
 $string['emailsent'] = 'E-mail sent to {$a}!';
 $string['emailnotsent'] = 'Error sending E-mail';
@@ -115,7 +115,7 @@ $string['vplaylist'] = 'Video Playlist';
 $string['youtube'] = 'YouTube';
 $string['ytplaylist'] = 'Youtube Playlist';
 $string['vimeo'] = 'Vimeo';
-$string['url'] = 'Full URL';
+$string['full_url'] = 'Full URL';
 $string['rtmp'] = 'RTMP Streaming';
 //playlist
 $string['playlistpositionnull'] = 'None';
