@@ -115,7 +115,7 @@ $string['vplaylist'] = 'Video Playlist';
 $string['youtube'] = 'YouTube';
 $string['ytplaylist'] = 'Youtube Playlist';
 $string['vimeo'] = 'Vimeo';
-$string['url'] = 'URL completo';
+$string['full_url'] = 'URL completo';
 $string['rtmp'] = 'RTMP Streaming';
 //playlist
 $string['playlistpositionnull'] = 'Nessuna';
