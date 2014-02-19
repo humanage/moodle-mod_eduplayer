@@ -41,7 +41,7 @@ function eduplayer_list_type() {
         'youtube' => get_string('youtube','eduplayer'),
         'ytplaylist' => get_string('ytplaylist','eduplayer'),
         'vimeo' => get_string('vimeo','eduplayer'),
-        'url' => get_string('url','eduplayer'),
+        'url' => get_string('full_url','eduplayer'),
         'rtmp' => get_string('rtmp','eduplayer')
     );
 }
