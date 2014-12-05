@@ -300,7 +300,7 @@ function eduplayer_get_extra_capabilities() {
  */
 function eduplayer_scale_used($eduplayerid, $scaleid) {
     global $DB;
-
+    return false;
     /** @example */
     if ($scaleid and $DB->record_exists('eduplayer', array('id' => $eduplayerid, 'grade' => -$scaleid))) {
         return true;
@@ -319,7 +319,7 @@ function eduplayer_scale_used($eduplayerid, $scaleid) {
  */
 function eduplayer_scale_used_anywhere($scaleid) {
     global $DB;
-
+    return false;
     /** @example */
     if ($scaleid and $DB->record_exists('eduplayer', array('grade' => -$scaleid))) {
         return true;
@@ -545,7 +545,7 @@ function eduplayer_video($eduplayer) {
     global $CFG, $COURSE, $CFG;
 
     $cm = get_coursemodule_from_instance('eduplayer', $eduplayer->id, $COURSE->id);        
-    $context = get_context_instance(CONTEXT_MODULE, $cm->id);
+    $context = CONTEXT_MODULE::instance($cm->id);
 
     $video = eduplayer_player_helper($eduplayer, $cm, $context);
     
