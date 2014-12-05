@@ -69,7 +69,7 @@ function eduplayer_add_instance(stdClass $eduplayer, mod_eduplayer_mod_form $mfo
     global $DB, $CFG;
 
     $eduplayer->timecreated = time();
-    $context = get_context_instance(CONTEXT_MODULE, $eduplayer->coursemodule);
+    $context = CONTEXT_MODULE::instance($eduplayer->coursemodule);
 
     $fs = get_file_storage();
 
@@ -128,7 +128,7 @@ function eduplayer_update_instance(stdClass $eduplayer, mod_eduplayer_mod_form $
     $eduplayer->timemodified = time();
     $eduplayer->id = $eduplayer->instance;
 
-    $context = get_context_instance(CONTEXT_MODULE, $eduplayer->coursemodule);
+    $context = $context = CONTEXT_MODULE::instance($eduplayer->coursemodule);
 
     $fs = get_file_storage();
     
