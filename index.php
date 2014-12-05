@@ -33,8 +33,9 @@ require_course_login($course);
 
 add_to_log($course->id, 'eduplayer', 'view all', 'index.php?id='.$course->id, '');
 
-$coursecontext = get_context_instance(CONTEXT_COURSE, $course->id);
+$coursecontext = CONTEXT_COURSE::instance($course->id);
 
+$PAGE->set_pagelayout('incourse');
 $PAGE->set_url('/mod/eduplayer/index.php', array('id' => $id));
 $PAGE->set_title(format_string($course->fullname));
 $PAGE->set_heading(format_string($course->fullname));
