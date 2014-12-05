@@ -68,7 +68,8 @@ class mod_eduplayer_mod_form extends moodleform_mod {
         $mform->addElement('select', 'urltype', get_string('urltype', 'eduplayer'), array(0 => get_string('URL', 'eduplayer'), 1 => get_string('FILE','eduplayer')));
         
         $mform->addElement('text', 'linkurl', get_string('linkurl', 'eduplayer'), array('size' => '47')); 
-        $mform->setDefault('linkurl', 'http://');      
+        $mform->setDefault('linkurl', 'http://');
+        $mform->setType('linkurl', PARAM_URL);
         // Disable my control if a checkbox is checked.
         $mform->disabledIf('linkurl', 'urltype', 'eq', 1);
         
@@ -90,6 +91,7 @@ class mod_eduplayer_mod_form extends moodleform_mod {
         // playlistsize
         $mform->addElement('text', 'playlistsize', get_string('playlistsize', 'eduplayer'), array('size' => '6'));
         $mform->setDefault('playlistsize', '260');
+        $mform->setType('playlistsize', PARAM_INT);
 
 		//	--------------------------------------- BEHAVIOUR ---------------------------------------
         $mform->addElement('header', 'behaviour', get_string('behaviour', 'eduplayer'));
@@ -119,16 +121,21 @@ class mod_eduplayer_mod_form extends moodleform_mod {
         $mform->addHelpButton('appearance', 'eduplayerappearance', 'eduplayer');
         // title
         $mform->addElement('text', 'title', get_string('title', 'eduplayer'), array('size' => '80'));
-        // width
+        if (!empty($CFG->formatstringstriptags)) {
+            $mform->setType('title', PARAM_TEXT);
+        } else {
+            $mform->setType('title', PARAM_CLEAN);
+        }
+        // Player Width
         $mform->addElement('text', 'width', get_string('width', 'eduplayer'), array('size' => '6'));
-        //$mform->addRule('width', get_string('required'), 'required', null, 'client');
         $mform->setDefault('width', '100%');
-        // height
+        $mform->setType('width', PARAM_TEXT);
+        // Player Height
 		$mform->addElement('text', 'height', get_string('height', 'eduplayer'), array('size' => '6'));
-		$mform->setDefault('height', '480');        
+		$mform->setDefault('height', '480'); 
+        $mform->setType('height', PARAM_TEXT);        
 		// Player Skin
-		$mform->addElement('select', 'eduplayerskin', get_string('eduplayerskin', 'eduplayer'), eduplayer_list_skins() );
-		$mform->setDefault('height', '480');
+		$mform->addElement('select', 'eduplayerskin', get_string('eduplayerskin', 'eduplayer'), eduplayer_list_skins() );      
 		
         // image
         $mform->addElement('filemanager', 'image', get_string('image', 'eduplayer'), null, array('subdirs' => 0, 'maxfiles' => 1, 'accepted_types' => eduplayer_image_extensions(), 'mainfile' => true ));
@@ -155,6 +162,7 @@ class mod_eduplayer_mod_form extends moodleform_mod {
         $mform->disabledIf('captionsfile', 'type', 'eq', 'ytplaylist');
         // captionsfontsize
         $mform->addElement('text', 'captionsfontsize', get_string('captionsfontsize', 'eduplayer'), array('size' => 6));
+        $mform->setType('captionsfontsize', PARAM_INT);
         $mform->setDefault('captionsfontsize', '14');
         // captionsstate
         $mform->addElement('select', 'captionsstate', get_string('captionsstate', 'eduplayer'), array('true' => get_string('true','eduplayer'), 'false' => get_string('false','eduplayer')));
@@ -164,6 +172,7 @@ class mod_eduplayer_mod_form extends moodleform_mod {
 		//	---------------------------------- share ------------------------------------------
         $mform->addElement('header', 'sharing', get_string('sharing', 'eduplayer'));		
         $mform->addElement('text', 'sharelink', get_string('sharelink', 'eduplayer'), array('size' => '80') );
+        $mform->setType('sharelink', PARAM_TEXT);
         $mform->addHelpButton('sharelink', 'sharelink', 'eduplayer');
 
 		$mform->addElement('editor', 'sharemailmessage_editor', get_string('sharemessagelabel', 'eduplayer'), null, array('trusttext'=>true, 'subdirs'=>true, 'maxfiles'=>3) );

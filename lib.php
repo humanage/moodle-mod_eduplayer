@@ -69,7 +69,7 @@ function eduplayer_add_instance(stdClass $eduplayer, mod_eduplayer_mod_form $mfo
     global $DB, $CFG;
 
     $eduplayer->timecreated = time();
-    $context = get_context_instance(CONTEXT_MODULE, $eduplayer->coursemodule);
+    $context = CONTEXT_MODULE::instance($eduplayer->coursemodule);
 
     $fs = get_file_storage();
 
@@ -128,7 +128,7 @@ function eduplayer_update_instance(stdClass $eduplayer, mod_eduplayer_mod_form $
     $eduplayer->timemodified = time();
     $eduplayer->id = $eduplayer->instance;
 
-    $context = get_context_instance(CONTEXT_MODULE, $eduplayer->coursemodule);
+    $context = $context = CONTEXT_MODULE::instance($eduplayer->coursemodule);
 
     $fs = get_file_storage();
     
@@ -300,7 +300,7 @@ function eduplayer_get_extra_capabilities() {
  */
 function eduplayer_scale_used($eduplayerid, $scaleid) {
     global $DB;
-
+    return false;
     /** @example */
     if ($scaleid and $DB->record_exists('eduplayer', array('id' => $eduplayerid, 'grade' => -$scaleid))) {
         return true;
@@ -319,7 +319,7 @@ function eduplayer_scale_used($eduplayerid, $scaleid) {
  */
 function eduplayer_scale_used_anywhere($scaleid) {
     global $DB;
-
+    return false;
     /** @example */
     if ($scaleid and $DB->record_exists('eduplayer', array('grade' => -$scaleid))) {
         return true;
@@ -545,7 +545,7 @@ function eduplayer_video($eduplayer) {
     global $CFG, $COURSE, $CFG;
 
     $cm = get_coursemodule_from_instance('eduplayer', $eduplayer->id, $COURSE->id);        
-    $context = get_context_instance(CONTEXT_MODULE, $cm->id);
+    $context = CONTEXT_MODULE::instance($cm->id);
 
     $video = eduplayer_player_helper($eduplayer, $cm, $context);
     

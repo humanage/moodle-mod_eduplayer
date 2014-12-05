@@ -46,7 +46,7 @@ if ($id) {
 
 
 require_login($course, true, $cm);
-$context = get_context_instance(CONTEXT_MODULE, $cm->id);
+$context = CONTEXT_MODULE::instance($cm->id);
 
 if( $forceDownload == 1 ){
 	eduplayer_pluginfile($course, $cm, $context, 'file', array('itemid'=>$id,'filename'=>$eduplayer->eduplayerfile), true, array()) ;
