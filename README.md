@@ -1,9 +1,10 @@
 ﻿Moodle Eduplayer
  
-======= Release notes for 1.3:
-- Added support for Moodle 3.x. Many thanks to Elightenment Learning  - http://elighten.me
-
-================
+======= 
+Release notes for 1.3:
+- Added support for Moodle 3.x. 
+Many thanks to Elightenment Learning  - http://elighten.me
+=======
 Html5/flash player for both video and audio media with sharing and download capabilities
 
 Main features are 
