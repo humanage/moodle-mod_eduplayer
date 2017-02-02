@@ -46,7 +46,8 @@ if ($id) {
 
 
 require_login($course, true, $cm);
-$context = CONTEXT_MODULE::instance($cm->id);
+//$context = get_context_instance(CONTEXT_MODULE, $cm->id);
+$context = context_module::instance($cm->id); //Mihir moodle3.2
 
 if( $forceDownload == 1 ){
 	eduplayer_pluginfile($course, $cm, $context, 'file', array('itemid'=>$id,'filename'=>$eduplayer->eduplayerfile), true, array()) ;
@@ -171,7 +172,7 @@ if ( isset( $f ) ) {
 		YUI().use('transition','io-form','node', function(Y) {
 			var cfg = {
 				method: 'POST',
-				data: {'ajax':'1'},
+				data: {ajax:'1'},
 				form: {id:'mform1'},
 			};	
 			function complete(transactionid, response, arguments) {
